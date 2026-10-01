@@ -1,37 +1,22 @@
 ---
-title: "About"
-description: "A bit about me and this blog."
+title: "关于我"
+description: "啥也不是（？）"
 ---
 
-AstroPaper is a minimal, accessible and SEO-friendly blog theme built with [Astro](https://astro.build/) and [Tailwind CSS](https://tailwindcss.com/).
+## 为什么建站？
 
-![Astro Paper](@/assets/images/astropaper-og.jpg)
+~~你问我，我哪知道？闲的呗！~~
 
-AstroPaper provides a solid foundation for blogs, or even portfolios\_ with full markdown support, built-in dark mode, and a clean layout that works out-of-the-box.
+说实在话，我深知这个网站是不会有什么人看的，但是既然网站已经建成了，就是哪怕作为我自言自语、自娱自乐的地方，也不为过，毕竟这也不反公序良俗。
 
-The blog posts in this theme also serve as guides, docs or example articles\_ making AstroPaper a flexible starting point for your next content-driven site.
+我本人是个**INTP 5w6**，我不知道这串符号是否能给你带来什么印象？我想可能不够！说实在话，在自我介绍这块，对我来讲是很吃力的。
 
-## Features
+这个博客现在可能没有什么东西，但是当我**想到了什么**，**研究了什么**，**探索了什么**，或许都是值得放在这里的。我知道没人会看，但是就像我前面所说的，你可以当我在用这个网站自言自语。
 
-AstroPaper comes with a set of useful features that make content publishing easy and effective:
+这并非我的本意，但是说实在我也懒得打理这个网站，所以各位**仁者见仁智者见智**，愿意看的话就看吧，不愿意的话那么关掉还来得及。不过有幸能碰上你，或许也算得上是一种缘分。
 
-- SEO-friendly
-- Fast performance
-- Light & dark mode
-- Highly customizable
-- Organizable blog posts
-- Responsive & accessible
-- Static search with [PageFind](https://pagefind.app/)
-- Automatic social image generation
+本人感兴趣的东西数不胜数，但是最感兴趣的主要有：**计算机**、**数学**、**科幻**、**人格类型学**……
 
-and so much more.
+在很多时候，人们或许会认为，喜欢这些东西的人往往**富有智慧**而又**常常孤独**，当然，我**不觉得**我是什么聪明人，但是**孤独**那确实是真的（
 
-## Show your support
-
-If you like [AstroPaper](https://github.com/satnaing/astro-paper), consider giving it a star ⭐️.
-
-Found a bug 🐛 or have an improvement ✨ in mind? Feel free to open an [issue](https://github.com/satnaing/astro-paper/issues), submit a [pull request](https://github.com/satnaing/astro-paper/pulls) or start a [discussion](https://github.com/satnaing/astro-paper/discussions).
-
-If you find this theme helpful, you can also [sponsor me on GitHub](https://github.com/sponsors/satnaing) or [buy me a coffee](https://buymeacoffee.com/satnaing) to show your support — every penny counts.
-
-Kyay zuu! 🙏🏼
+俗话说，人是**活到老学到老**，虽然我总说自己是 **“人形百科全书”**，但我还有很多**不会**的东西，还有很多**值得取得进步**的地方，我**不奢求**博古通今，但是至少在**我的领域**能够**取得一些进展**。

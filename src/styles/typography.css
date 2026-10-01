@@ -3,7 +3,13 @@
 @layer base {
   /* ===== Override default Tailwind Typography styles ===== */
   .app-prose {
+    
     @apply prose;
+
+    /* Katex text color */
+    .katex-display {
+        @apply text-foreground;
+    }
 
     h1,
     h2,

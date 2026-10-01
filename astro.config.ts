@@ -8,6 +8,8 @@ import tailwindcss from "@tailwindcss/vite";
 import mdx from "@astrojs/mdx";
 import sitemap from "@astrojs/sitemap";
 import { unified } from "@astrojs/markdown-remark";
+import remarkMath from "remark-math";
+import rehypeKatex from "rehype-katex";
 import remarkToc from "remark-toc";
 import remarkCollapse from "remark-collapse";
 import rehypeCallouts from "rehype-callouts";
@@ -29,8 +31,8 @@ export default defineConfig({
     }),
   ],
   i18n: {
-    locales: ["en"],
-    defaultLocale: "en",
+    locales: ["zh-cn"],
+    defaultLocale: "zh-cn",
     routing: {
       prefixDefaultLocale: false,
     },
@@ -38,10 +40,11 @@ export default defineConfig({
   markdown: {
     processor: unified({
       remarkPlugins: [
+        remarkMath,
         remarkToc,
         [remarkCollapse, { test: "Table of contents" }],
       ],
-      rehypePlugins: [rehypeCallouts],
+      rehypePlugins: [rehypeKatex, rehypeCallouts],
     }),
     shikiConfig: {
       themes: { light: "min-light", dark: "night-owl" },
@@ -58,17 +61,24 @@ export default defineConfig({
   vite: {
     plugins: [tailwindcss()],
   },
-  fonts: [
-    {
-      name: "Google Sans Code",
-      cssVariable: "--font-google-sans-code",
-      provider: fontProviders.google(),
-      fallbacks: ["monospace"],
-      weights: [300, 400, 500, 600, 700],
-      styles: ["normal", "italic"],
-      formats: ["woff", "ttf"],
-    },
-  ],
+  fonts: [{
+    provider: fontProviders.local(),
+    name: "阿里妈妈方圆体",
+    cssVariable: "--font-custom",
+    options: {
+      variants: [{
+        src: ['./src/assets/fonts/almmfyt_medium.woff2'],
+        weight: 'normal',
+        style: 'normal'
+      },
+      {
+        src: ['./src/assets/fonts/almmfyt_bold.woff2'],
+        weight: 'bold',
+        style: 'normal'
+      }
+    ]
+    }
+  }],
   env: {
     schema: {
       PUBLIC_GOOGLE_SITE_VERIFICATION: envField.string({
