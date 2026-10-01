@@ -68,17 +68,27 @@ export default defineConfig({
     options: {
       variants: [{
         src: ['./src/assets/fonts/almmfyt_medium.woff2'],
-        weight: 'normal',
+        weight: '400',
         style: 'normal'
       },
       {
         src: ['./src/assets/fonts/almmfyt_bold.woff2'],
-        weight: 'bold',
+        weight: '700',
         style: 'normal'
       }
     ]
     }
-  }],
+  },
+  {
+      name: "Google Sans Code",
+      cssVariable: "--font-google-sans-code",
+      provider: fontProviders.google(),
+      fallbacks: ["monospace"],
+      weights: [300, 400, 500, 600, 700],
+      styles: ["normal", "italic"],
+      formats: ["woff", "ttf"],
+    },
+  ],
   env: {
     schema: {
       PUBLIC_GOOGLE_SITE_VERIFICATION: envField.string({
