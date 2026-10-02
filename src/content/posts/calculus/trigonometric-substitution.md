@@ -1,7 +1,7 @@
 ---
 author: Abjust
-pubDatetime: 2026-09-30T18:00:00.000Z
-modDatetime: 2026-09-30T18:00:00.000Z
+pubDatetime: 2026-09-30T00:00:00.000Z
+modDatetime: 2026-09-30T00:00:00.000Z
 title: 三角换元法
 slug: trigonometric-substitution
 featured: false

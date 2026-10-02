@@ -8,6 +8,7 @@ export default {
     about: "About",
     archives: "Archives",
     search: "Search",
+    friends: "Friends",
   },
   post: {
     publishedAt: "Published at",
@@ -52,6 +53,9 @@ export default {
 
     searchTitle: "Search",
     searchDesc: "Search any article ...",
+
+    friendsTitle: "Friends",
+    friendsDesc: "友情链接",
   },
   a11y: {
     skipToContent: "Skip to content",

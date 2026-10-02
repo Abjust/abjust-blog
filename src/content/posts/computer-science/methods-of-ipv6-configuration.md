@@ -1,7 +1,7 @@
 ---
 author: Abjust
-pubDatetime: 2026-09-30T18:00:00.000Z
-modDatetime: 2026-09-30T18:00:00.000Z
+pubDatetime: 2026-09-30T00:00:00.000Z
+modDatetime: 2026-09-30T00:00:00.000Z
 title: 论IPv6的配置方法
 slug: methods-of-ipv6-configuration
 featured: false

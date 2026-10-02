@@ -1,7 +1,7 @@
 ---
 author: Abjust
-pubDatetime: 2026-09-30T18:00:00.000Z
-modDatetime: 2026-09-30T18:00:00.000Z
+pubDatetime: 2026-09-30T00:00:00.000Z
+modDatetime: 2026-09-30T00:00:00.000Z
 title: 分部积分法
 slug: integration-by-parts
 featured: false

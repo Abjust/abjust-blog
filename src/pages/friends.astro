@@ -1,0 +1,69 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import Header from "@/components/Header.astro";
+import Breadcrumb from "@/components/Breadcrumb.astro";
+import Main from "@/components/Main.astro";
+import Footer from "@/components/Footer.astro";
+import { useTranslations } from "@/i18n";
+import config from "@/config";
+import friendsData from "@/data/friends.json";
+
+const locale = Astro.currentLocale ?? config.site.lang;
+const t = useTranslations(locale);
+
+interface Friend {
+  name: string;
+  url: string;
+  avatar: string;
+  description: string;
+  category: string;
+}
+
+const friends: Friend[] = friendsData;
+
+// Group by category
+const categories = [...new Set(friends.map(f => f.category))];
+const groupedFriends = categories.map(category => ({
+  category,
+  friends: friends.filter(f => f.category === category),
+}));
+---
+
+<Layout
+  title={`${t.nav.friends} | ${config.site.title}`}
+  description="友情链接"
+>
+  <Header />
+  <Breadcrumb />
+  <Main pageTitle={t.nav.friends}>
+    <div class="space-y-8">
+      {groupedFriends.map(({ category, friends }) => (
+        <div>
+          <h2 class="text-2xl font-bold mb-4">{category}</h2>
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+            {friends.map(friend => (
+              <a
+                href={friend.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="flex items-center gap-4 p-4 border border-border rounded-lg hover:bg-hover transition-colors"
+              >
+                <img
+                  src={friend.avatar}
+                  alt={friend.name}
+                  class="w-12 h-12 rounded-full object-cover"
+                  loading="lazy"
+                />
+                <div class="flex-1 min-w-0">
+                  <h3 class="font-semibold truncate">{friend.name}</h3>
+                  <p class="text-sm text-foreground/60 truncate">{friend.description}</p>
+                </div>
+              </a>
+            ))}
+          </div>
+        </div>
+      ))}
+    </div>
+  </Main>
+  <Footer />
+</Layout>

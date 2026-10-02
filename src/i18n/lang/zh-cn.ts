@@ -7,7 +7,8 @@ export default {
     tags: "标签",
     about: "关于",
     archives: "归档",
-    search: "Search",
+    search: "搜索",
+    friends: "友链",
   },
   post: {
     publishedAt: "发布于",
@@ -23,9 +24,9 @@ export default {
     nextPost: "下一篇文章",
   },
   pagination: {
-    prev: "Prev",
-    next: "Next",
-    page: "Page",
+    prev: "上一页",
+    next: "下一页",
+    page: "页数",
   },
   home: {
     socialLinks: "社交账号",
@@ -52,6 +53,9 @@ export default {
 
     searchTitle: "搜索",
     searchDesc: "搜索文章……",
+
+    friendsTitle: "友链",
+    friendsDesc: "友情链接",
   },
   a11y: {
     skipToContent: "跳到正文",
