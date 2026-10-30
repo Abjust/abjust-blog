@@ -15,6 +15,17 @@ description: How did I beat HBM's Nuclear Tech Mod over the past month or so?
 
 ## Table of contents
 
+## TL;DR
+In early September 2026, I started yet another survival world in HBM's Nuclear Tech Mod, and this time I finally didn't give up halfway.
+
+Starting from a combustion generator, I worked my way through the oil industry, nuclear reactors, the fusion reactor and the ICF, and wrapped it all up with the Gerald construction android, the DFC and the FEnSU.
+
+Along the way I had a few meltdowns, loaded a few backups, and even blew up my own home, but I made it to the finish line in the end.
+
+The FEnSU now holds 2.5 PHE of energy. That's more power than I could use in a lifetime.
+
+As for the extras after the ending, where I went looking for things to do, just put them down to me being bored.
+
 ## Where the Dream Began
 In early September 2026, with nothing better to do, I started yet another survival world to play on my own.
 
