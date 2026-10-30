@@ -520,8 +520,6 @@ The Watz power plant is modeled on the pebble-bed reactor. In the game, it won't
 
 ![The Watz power plant as it looks now](@/assets/images/hbm-ntm/watz.png)
 
-Still, the Watz power plant has problems of its own.
-
 If the poisonous mud overflows, it melts down, spraying poisonous mud everywhere (I call it "the sludge burst"), which is truly nauseating to look at.
 
 Poisonous mud can be used to make CMB steel, or broken down in a gas centrifuge for lead powder and iron powder.
