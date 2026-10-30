@@ -7,7 +7,14 @@ import Main from "@/components/Main.astro";
 import Footer from "@/components/Footer.astro";
 import config from "@/config";
 
-const about = await getEntry("pages", "about");
+const locale = Astro.currentLocale ?? config.site.lang;
+
+// Translations live in `src/content/pages/{locale}/about.md`; fall back to the
+// default-locale page when there is none.
+const about =
+  (locale !== config.site.lang &&
+    (await getEntry("pages", `${locale}/about`))) ||
+  (await getEntry("pages", "about"));
 
 if (!about) {
   throw new Error(

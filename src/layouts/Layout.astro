@@ -4,6 +4,7 @@ import { ClientRouter } from "astro:transitions";
 import { getRelativeLocaleUrl } from "astro:i18n";
 import { resolveDefaultOgImagePath } from "@/utils/resolveDefaultOgImagePath";
 import { getAssetPath } from "@/utils/withBase";
+import { getSiteDescription } from "@/i18n";
 import config from "@/config";
 import "@/styles/global.css";
 
@@ -15,25 +16,24 @@ type Props = {
 };
 
 const { site } = config;
+const locale = Astro.currentLocale ?? site.lang;
 
 const {
   title = site.title,
-  description = site.description,
+  description = getSiteDescription(locale),
   ogImage = resolveDefaultOgImagePath(config),
   canonicalURL = new URL(Astro.url.pathname, Astro.site).href,
 } = Astro.props;
 
 const socialImageURL = new URL(ogImage, Astro.site ?? Astro.url);
-const rssHref = getRelativeLocaleUrl(
-  Astro.currentLocale ?? config.site.lang,
-  "rss.xml"
-);
+// getRelativeLocaleUrl() appends a trailing slash, which a file URL must not have
+const rssHref = getRelativeLocaleUrl(locale, "rss.xml").replace(/\/$/, "");
 ---
 
 <!doctype html>
 <html
   dir={site.dir ?? "ltr"}
-  lang={Astro.currentLocale ?? site.lang}
+  lang={locale}
   class="overflow-y-scroll scroll-smooth"
 >
   <head>
@@ -50,9 +50,10 @@ const rssHref = getRelativeLocaleUrl(
 
     <!-- Font -->
     <Font
-      cssVariable="--font-custom"
+      cssVariable="--font-latin"
       preload={[{ subset: "latin", weight: 400, style: "normal" }]}
     />
+    <Font cssVariable="--font-cjk" />
 
     <!-- Primary meta -->
     <title>{title}</title>

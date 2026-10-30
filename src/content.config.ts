@@ -2,11 +2,28 @@ import { defineCollection } from "astro:content";
 import { z } from "astro/zod";
 import { glob } from "astro/loaders";
 import config from "@/config";
+import { splitPostLocale } from "@/utils/postLocale";
+import { slugifyStr } from "@/utils/slugify";
 
 export const BLOG_PATH = "src/content/posts";
 
 const posts = defineCollection({
-  loader: glob({ pattern: "**/[^_]*.{md,mdx}", base: `./${BLOG_PATH}` }),
+  loader: glob({
+    pattern: "**/[^_]*.{md,mdx}",
+    base: `./${BLOG_PATH}`,
+    // Prefix translated posts' ids with their locale, so a translation can reuse
+    // the original post's `slug` without colliding with it.
+    generateId: ({ entry, data }) => {
+      const { locale, segments } = splitPostLocale(entry.split("/"));
+      const id =
+        typeof data.slug === "string" && data.slug !== ""
+          ? data.slug
+          : segments
+              .map(segment => slugifyStr(segment.replace(/\.mdx?$/, "")))
+              .join("/");
+      return locale === config.site.lang ? id : `${locale}/${id}`;
+    },
+  }),
   schema: ({ image }) =>
     z.object({
       author: z.string().default(config.site.author),

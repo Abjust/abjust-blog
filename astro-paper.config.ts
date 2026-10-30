@@ -9,6 +9,7 @@ export default defineAstroPaperConfig({
     profile: "https://github.com/Abjust",
     ogImage: "default-og.jpg",
     lang: "zh-cn",
+    locales: ["zh-cn", "en"],
     timezone: "Asia/Shanghai",
     dir: "ltr",
   },
@@ -24,7 +25,7 @@ export default defineAstroPaperConfig({
     showBackButton: true,
     editPost: {
       enabled: true,
-      url: "https://github.com/satnaing/astro-paper/edit/main/",
+      url: "https://github.com/Abjust/abjust-blog/edit/master/",
     },
     search: "pagefind",
   },

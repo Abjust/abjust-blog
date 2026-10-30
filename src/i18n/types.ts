@@ -1,4 +1,6 @@
 export interface UIStrings {
+  /** The language's own name, shown in the language switcher */
+  languageName: string;
   nav: {
     home: string;
     posts: string;
@@ -31,6 +33,9 @@ export interface UIStrings {
     featured: string;
     recentPosts: string;
     allPosts: string;
+    /** Site tagline; for non-default locales, also replaces `config.site.description` */
+    tagline: string;
+    intro: string;
   };
   footer: {
     copyright: string;
@@ -64,6 +69,7 @@ export interface UIStrings {
     noResults: string;
     goToPreviousPage: string;
     goToNextPage: string;
+    switchLanguage: string;
   };
   notFound: {
     title: string;

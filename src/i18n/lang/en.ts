@@ -1,6 +1,7 @@
 import type { UIStrings } from "../types";
 
 export default {
+  languageName: "English",
   nav: {
     home: "Home",
     posts: "Posts",
@@ -33,6 +34,9 @@ export default {
     featured: "Featured",
     recentPosts: "Recent Posts",
     allPosts: "All Posts",
+    tagline: "Life has no inherent meaning, yet humans choose to seek one",
+    intro:
+      "Notes from my studies and everyday life live here. Think of it as decoration.",
   },
   footer: {
     copyright: "Copyright",
@@ -55,7 +59,7 @@ export default {
     searchDesc: "Search any article ...",
 
     friendsTitle: "Friends",
-    friendsDesc: "友情链接",
+    friendsDesc: "Links to my friends' sites.",
   },
   a11y: {
     skipToContent: "Skip to content",
@@ -66,6 +70,7 @@ export default {
     noResults: "No results found",
     goToPreviousPage: "Go to previous page",
     goToNextPage: "Go to next page",
+    switchLanguage: "Switch language",
   },
   notFound: {
     title: "404 Not Found",

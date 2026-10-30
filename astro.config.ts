@@ -13,6 +13,7 @@ import rehypeKatex from "rehype-katex";
 import remarkToc from "remark-toc";
 import remarkCollapse from "remark-collapse";
 import rehypeCallouts from "rehype-callouts";
+import rehypeFigure from "@microflash/rehype-figure";
 import {
   transformerNotationDiff,
   transformerNotationHighlight,
@@ -20,6 +21,9 @@ import {
 } from "@shikijs/transformers";
 import { transformerFileName } from "./src/utils/transformers/fileName";
 import config from "./astro-paper.config";
+
+// A post gets a table of contents under a "## 目录" / "## Table of contents" heading
+const tocHeading = "目录|table[ -]of[ -]contents?";
 
 export default defineConfig({
   site: config.site.url,
@@ -31,8 +35,8 @@ export default defineConfig({
     }),
   ],
   i18n: {
-    locales: ["zh-cn"],
-    defaultLocale: "zh-cn",
+    locales: config.site.locales ?? [config.site.lang ?? "en"],
+    defaultLocale: config.site.lang ?? "en",
     routing: {
       prefixDefaultLocale: false,
     },
@@ -41,10 +45,16 @@ export default defineConfig({
     processor: unified({
       remarkPlugins: [
         remarkMath,
-        remarkToc,
-        [remarkCollapse, { test: "Table of contents" }],
+        [remarkToc, { heading: tocHeading }],
+        [
+          remarkCollapse,
+          {
+            test: new RegExp(`^(${tocHeading})$`, "i"),
+            summary: (heading: string) => heading,
+          },
+        ],
       ],
-      rehypePlugins: [rehypeKatex, rehypeCallouts],
+      rehypePlugins: [rehypeKatex, rehypeCallouts, rehypeFigure],
     }),
     shikiConfig: {
       themes: { light: "min-light", dark: "night-owl" },
@@ -61,24 +71,46 @@ export default defineConfig({
   vite: {
     plugins: [tailwindcss()],
   },
-  fonts: [{
-    provider: fontProviders.local(),
-    name: "阿里妈妈方圆体",
-    cssVariable: "--font-custom",
-    options: {
-      variants: [{
-        src: ['./src/assets/fonts/almmfyt_medium.woff2'],
-        weight: '400',
-        style: 'normal'
-      },
-      {
-        src: ['./src/assets/fonts/almmfyt_bold.woff2'],
-        weight: '700',
-        style: 'normal'
+  fonts: [
+    {
+      provider: fontProviders.local(),
+      name: "Manrope",
+      cssVariable: "--font-latin",
+      // No generic fallback here: it would match Chinese characters before
+      // MiSans gets a chance (see `--font-app` in src/styles/theme.css).
+      fallbacks: [],
+      options: {
+        variants: [{
+          src: ['./src/assets/fonts/Manrope-Regular.woff2'],
+          weight: '400',
+          style: 'normal'
+        },
+        {
+          src: ['./src/assets/fonts/Manrope-Bold.woff2'],
+          weight: '700',
+          style: 'normal'
+        }
+      ]
       }
-    ]
-    }
-  },
+    },
+    {
+      provider: fontProviders.local(),
+      name: "MiSans",
+      cssVariable: "--font-cjk",
+      options: {
+        variants: [{
+          src: ['./src/assets/fonts/MiSans-Regular.woff2'],
+          weight: '400',
+          style: 'normal'
+        },
+        {
+          src: ['./src/assets/fonts/MiSans-Bold.woff2'],
+          weight: '700',
+          style: 'normal'
+        }
+      ]
+      }
+    },
   {
       name: "Google Sans Code",
       cssVariable: "--font-google-sans-code",

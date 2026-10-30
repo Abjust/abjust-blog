@@ -1,0 +1,10 @@
+---
+import type { GetStaticPaths } from "astro";
+import PostPage from "@/pages/posts/[...slug]/index.astro";
+import { getPostPaths } from "@/utils/getStaticPaths";
+
+export const getStaticPaths = (() =>
+  getPostPaths("en")) satisfies GetStaticPaths;
+---
+
+<PostPage {...Astro.props} />

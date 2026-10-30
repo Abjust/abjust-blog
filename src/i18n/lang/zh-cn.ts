@@ -1,6 +1,7 @@
 import type { UIStrings } from "../types";
 
 export default {
+  languageName: "中文",
   nav: {
     home: "主页",
     posts: "文章",
@@ -33,6 +34,8 @@ export default {
     featured: "精选",
     recentPosts: "近期文章",
     allPosts: "所有文章",
+    tagline: "生活本无意义，但人类选择追寻",
+    intro: "这里记录着我的学习心得和生活日常，就当是摆设了。",
   },
   footer: {
     copyright: "Copyright",
@@ -66,6 +69,7 @@ export default {
     noResults: "找不到结果",
     goToPreviousPage: "上一页",
     goToNextPage: "下一页",
+    switchLanguage: "切换语言",
   },
   notFound: {
     title: "404 Not Found",

@@ -11,8 +11,14 @@ interface SiteConfig {
   profile?: string;
   /** Fallback OG image filename in /public, e.g. "og.jpg" */
   ogImage?: string;
-  /** HTML lang attribute, defaults to "en" */
+  /** HTML lang attribute, defaults to "en". Also the default locale (served without a URL prefix). */
   lang?: string;
+  /**
+   * All supported locales, including `lang`. Non-default locales are served
+   * under `/{locale}/` and their posts live in `src/content/posts/{locale}/`.
+   * Defaults to `[lang]`.
+   */
+  locales?: string[];
   /** IANA timezone for post dates, e.g. "Asia/Bangkok" */
   timezone?: string;
   /** Text direction */
@@ -110,6 +116,7 @@ type ResolvedSiteConfig = Required<
     | "description"
     | "author"
     | "lang"
+    | "locales"
     | "timezone"
     | "dir"
     | "ogImage"

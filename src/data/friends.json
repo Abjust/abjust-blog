@@ -19,5 +19,12 @@
     "avatar": "https://msst2031.cn/icons/msst.png",
     "description": "回望过往点滴，展望未来旅程；过去与未来的交汇，故事仍在继续",
     "category": "团队"
+  },
+  {
+    "name": "MSST-Net",
+    "url": "https://msst-net.msst2031.cn",
+    "avatar": "https://msst2031.cn/icons/msst.png",
+    "description": "虽是远在天边，犹如近在眼前",
+    "category": "项目"
   }
 ]
