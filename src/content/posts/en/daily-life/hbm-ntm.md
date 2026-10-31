@@ -270,6 +270,8 @@ The RBMK differs from the ZIRNOX in one way: its spent fuel has to be processed 
 
 The SILEX itself doesn't need power, but it needs a laser aimed at it, and the laser does need power.
 
+![SILEX](@/assets/images/hbm-ntm/silex.png)
+
 The laser can hold different kinds of laser crystals. At first, only the infrared crystal is available.
 
 Besides processing spent RBMK fuel, the SILEX has another advantage: it can enrich uranium-235 in bulk much more efficiently.
