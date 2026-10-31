@@ -20,6 +20,7 @@ import {
   transformerNotationWordHighlight,
 } from "@shikijs/transformers";
 import { transformerFileName } from "./src/utils/transformers/fileName";
+import { remarkReadingTime } from "./remark-reading-time.mjs";
 import config from "./astro-paper.config";
 
 // A post gets a table of contents under a "## 目录" / "## Table of contents" heading
@@ -53,6 +54,7 @@ export default defineConfig({
             summary: (heading: string) => heading,
           },
         ],
+        remarkReadingTime,
       ],
       rehypePlugins: [rehypeKatex, rehypeCallouts, rehypeFigure],
     }),

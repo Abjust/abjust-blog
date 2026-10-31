@@ -14,6 +14,7 @@ export default {
   post: {
     publishedAt: "发布于",
     updatedAt: "更新于",
+    dateFormat: "YYYY 年 M 月 D 日",
     sharePostIntro: "分享这篇文章：",
     sharePostOn: "在 {{platform}} 分享这篇文章",
     sharePostViaEmail: "通过邮箱分享这篇文章",
@@ -23,6 +24,7 @@ export default {
     editPage: "编辑页面",
     previousPost: "上一篇文章",
     nextPost: "下一篇文章",
+    readingTime: "约 {{minutes}} 分钟读完",
   },
   pagination: {
     prev: "上一页",

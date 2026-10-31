@@ -13,7 +13,8 @@ export default {
   },
   post: {
     publishedAt: "Published at",
-    updatedAt: "Updated",
+    updatedAt: "Updated:",
+    dateFormat: "D MMM, YYYY",
     sharePostIntro: "Share this post:",
     sharePostOn: "Share this post on {{platform}}",
     sharePostViaEmail: "Share this post via email",
@@ -23,6 +24,7 @@ export default {
     editPage: "Edit page",
     previousPost: "Previous Post",
     nextPost: "Next Post",
+    readingTime: "{{minutes}} min read",
   },
   pagination: {
     prev: "Prev",

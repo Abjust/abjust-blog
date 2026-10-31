@@ -12,7 +12,10 @@ export interface UIStrings {
   };
   post: {
     publishedAt: string;
+    /** Label before the date of an updated post, including any punctuation */
     updatedAt: string;
+    /** dayjs format string for post dates, e.g. "D MMM, YYYY" */
+    dateFormat: string;
     sharePostIntro: string;
     sharePostOn: string;
     sharePostViaEmail: string;
@@ -22,6 +25,8 @@ export interface UIStrings {
     editPage: string;
     previousPost: string;
     nextPost: string;
+    /** Estimated reading time; `{{minutes}}` is a whole number */
+    readingTime: string;
   };
   pagination: {
     prev: string;
